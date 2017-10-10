@@ -22,7 +22,7 @@ Some examples:
 			
 			
 			$('textarea#message2').characterCount(
-			{	message: "limité à: _nbLimit_ caractères, Reste: _nbRemaining_ [ _nbCharCounter_ lettres /_nbWordCounter_ mots ]",
+			{	message: "limitÃ© Ã : _nbLimit_ caractÃ¨res, Reste: _nbRemaining_ [ _nbCharCounter_ lettres /_nbWordCounter_ mots ]",
 				debug: false
 			});
 			
@@ -51,4 +51,4 @@ Some examples:
 [Demo](https://benfarhat.github.io/jquery-character-word-pattern-counter
 /)
 
-2017 ?? Benfarhat Elyes
+2017 ğŸ–¥ Benfarhat Elyes
