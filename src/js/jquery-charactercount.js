@@ -29,14 +29,22 @@
 		});
 	};	
 	function updateCharCounter($content, opts) {
+    var tag = $content.prop("tagName"),
+      formTag = ["input", "textarea"],
+      checkTag = formTag.indexOf(tag.toLowerCase()),
+      contentText;
+
+    if( checkTag > -1 ) {
+      contentText = $content.val();
+    } else {
+      contentText = $content.text();
+    }
 
 		var mapObj = {
 				_nbLimit_ : parseInt($content.attr('maxlength'), 10),
-				_nbCharCounter_ : $content.val().length,
-				_nbRemaining_ : (parseInt($content
-					.attr('maxlength'), 10) - $content.val()
-					.length),
-				_nbWordCounter_ : $content.val()
+				_nbCharCounter_ : contentText.length,
+				_nbRemaining_ : (parseInt($content.attr('maxlength'), 10) - contentText.length),
+				_nbWordCounter_ : contentText
 					.replace(opts.customPattern,"x")
 					.replace(/[^x]+/g,"")
 					.length

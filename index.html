@@ -11,9 +11,14 @@
     <meta name="geo.placename" content="Tunis, Tunisia">
     <meta name="geo.region" content="TN-11">
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />   
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />   
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <!-- CSS Animate -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <!-- Font Face -->
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">  
     <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Inconsolata" rel="stylesheet"> 
@@ -22,13 +27,25 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <!-- CSS Only for demo -->
     <style>
-    body{font-family:'Raleway',sans-serif; padding-top:60px;}
-    .myForm{border-left:8px solid rgba(0,0,0,.1);padding-left:24px;}
+    body{font-family:'Raleway',sans-serif; padding-top:30px;}
+    .myForm{border-left:8px solid rgba(0,0,0,.1); padding-left:24px;}
 		pre.code, textarea.form-control, input.form-control, button.btn{border-radius: 0px;}
-		pre.code{font-family: "Inconsolata",  serif; line-height:1em; margin-top:20px;font-size:0.9em;}
-		.jumbotron p{font-size:1.2em;text-align:justify;}
+		pre.code{font-family: "Inconsolata",  serif; line-height:1em; margin-top:20px; font-size:0.9em;}
+		.jumbotron p{font-size:1.2em; text-align:justify;padding-top:32px;padding-bottom:32px;}
+    .limit-header{color:#fff; position:relative; top:30px; left:-13em; font-size:0.8em;}
+    .limit-header:hover{color:#fff; text-decoration:none;}
+    .vertical-text{
+      position: absolute;
+      transform: rotate(90deg);
+      transform-origin: left top 0;
+      padding-left:2px;
+    }
+    div.form-group{min-height:120px;}
     </style>
+    <!--/ CSS -->
 </head>
 <body>
     <!-- ######## -->
@@ -37,17 +54,21 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+          data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">CHARACTER COUNT <sub>15 characters / 2 words</sub></a>
+          <a class="navbar-brand" href="#">CHARACTER COUNT</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="https://github.com/Benfarhat"><i class="fa fa-github"></i><span class="sr-only">(current)</span></a></li>
+            <li class="active">
+              <a href="https://github.com/Benfarhat">
+                  <i class="fa fa-github"></i><span class="sr-only">(current)</span></a>
+              </li>
           </ul>
         </div><!--/.navbar-collapse -->
       </div>
@@ -62,46 +83,49 @@
           <h2>Character count</h2>
 					<ul>
           <li>Easy to use!</li>
-					<li>Add a character, a word or a custom pattern matching counter to your form elements.</li>
+					<li>Add a character, a word counter to your form elements.</li>
 					<li>Customize the rendered message.</li> 
 					<li>Customize the default pattern and count everything.</li> 
+					<li>Work also with all elements (check the header of this page)</li> 
 					</ul>
 					<p><small>Hope it help!</small></p>
         </div>
         <div class="col-md-9">
           <pre class="code">
-
 $(document).ready(function () {
-	'use strict';
+	<span style="color:#16a085;">'use strict';</span>
 	$('textarea#english')
 	.<span style="color:#2980b9;">characterCount</span>(
-	{	<span style="color:#16a085;">message</span>: 
+	{	
+	 <span style="color:#16a085;">message</span>: 
 	"limit: <span style="color:#d35400;">_nbLimit_</span> characters, remaining: <span style="color:#d35400;">_nbRemaining_</span> [ <span style="color:#d35400;">_nbCharCounter_</span> letters/<span style="color:#d35400;">_nbWordCounter_</span> words ]",
-		<span style="color:#16a085;">debug</span>: false
+	 <span style="color:#16a085;">debug</span>: false
 	});
 	
 	$('textarea#french')
 	.<span style="color:#2980b9;">characterCount</span>(
-	{	<span style="color:#16a085;">message</span>: 
-	"limité à: <span style="color:#d35400;">_nbLimit_</span> caractères, Reste: <span style="color:#d35400;">_nbRemaining_</span> [ <span style="color:#d35400;">_nbCharCounter_</span> lettres /<span style="color:#d35400;">_nbWordCounter_</span> mots ]",
-		<span style="color:#16a085;">debug</span>: false
+	{	
+	 <span style="color:#16a085;">message</span>: 
+	"limité à: <span style="color:#d35400;">_nbLimit_</span> caractères, Reste: <span style="color:#d35400;">_nbRemaining_</span> [ <span style="color:#d35400;">_nbCharCounter_</span> lettres /<span style="color:#d35400;">_nbWordCounter_</span> mots ]"
 	});
 	
 	$('input#subscribe')
 	.<span style="color:#2980b9;">characterCount</span>(
-	{	<span style="color:#16a085;">message</span>: 
+	{	
+	 <span style="color:#16a085;">message</span>: 
 	"<span style="color:#d35400;">_nbRemaining_</span> / <span style="color:#d35400;">_nbLimit_</span>",
-		<span style="color:#16a085;">wrapTag</span>: "div",
-		<span style="color:#16a085;">messageClass</span>: "panel panel-success",
-		<span style="color:#16a085;">debug</span>: true
+	 <span style="color:#16a085;">wrapTag</span>: "div",
+	 <span style="color:#16a085;">messageClass</span>: "panel panel-success",
+	 <span style="color:#16a085;">debug</span>: true
 	});	
 
 	
 	$('textarea#pattern')
 	.<span style="color:#2980b9;">characterCount</span>(
-	{	<span style="color:#16a085;">message</span>: "you write <span style="color:#d35400;">_nbWordCounter_</span> times the word \"jquery\"",
-		<strong><span style="color:#e74c3c;">customPattern</span>: /(?:jQuery|JQUERY|jquery)+/g,</strong>
-		<span style="color:#16a085;">debug</span>: true
+	{	
+	 <span style="color:#16a085;">message</span>: "you write <span style="color:#d35400;">_nbWordCounter_</span> times the word \"jquery\"",
+	 <strong><span style="color:#e74c3c;">customPattern</span>: /(?:jQuery|JQUERY|jquery)+/g,</strong>
+	 <span style="color:#16a085;">debug</span>: true
 	});	
 
 });</pre>
@@ -118,36 +142,49 @@ $(document).ready(function () {
 			<div class="myForm">  
 					<form role="form">
 						<div class="form-group">
+              <span class="vertical-text"><i class="fa fa-thumb-tack"></i> Example 1</span>
 							<label>Tell us something about you:</label>
-							<textarea class="form-control" type="textarea" id="message1" placeholder="something about you..." maxlength="140" rows="7"></textarea>       
+							<textarea class="form-control" type="textarea" id="message1" 
+              placeholder="something about you..." maxlength="140" rows="7"></textarea>       
 						</div>
 						
 						<div class="form-group">
-							<label>Dites nous quelquechoses à  propos de vous:</label>
-							<textarea class="form-control" type="textarea" id="message2" placeholder="something about your dream..." maxlength="130" rows="7"></textarea>       
+              <span class="vertical-text"><i class="fa fa-thumb-tack"></i> Example 2</span>
+							<label>Dites nous quelquechoses à propos de vous:</label>
+							<textarea class="form-control" type="textarea" id="message2" 
+              placeholder="something about your dream..." maxlength="130" rows="7"></textarea>       
 						</div>
 						
 						<div class="form-group">
-							<label>Do you want to receive our super fantastic and incredible magazine:</label>
-							<input type="text" class="form-control" maxlength="60" id="subscribe" name="subscribe" placeholder="Do you want to receive our super fantastic and incredible magazine" required>
+              <span class="vertical-text"><i class="fa fa-thumb-tack"></i> Example 3</span>
+							<label>You can customize the render of you message:</label>
+							<input type="text" class="form-control" maxlength="60" id="subscribe" 
+              name="subscribe" placeholder="This input is limited to 60 characters" required>
 						</div>
 						
 						<div class="form-group">
-							<label>An intentional "wrong" Input with no maxlength attributes (if debug option is true, a console message is created:</label>
-							<input type="text" class="form-control" id="wrong" name="wrong" placeholder="Do you want to receive our super fantastic and incredible magazine" required>
+              <span class="vertical-text"><i class="fa fa-thumb-tack"></i> Example 4</span>
+							<label>An intentional Input with no maxlength attributes 
+                (if debug option is true, a console message is created):</label>
+							<input type="text" class="form-control" id="wrong" name="wrong" 
+              placeholder="This input has no maxlength value..." required>
 						</div>
 						
 						<div class="form-group">
+              <span class="vertical-text"><i class="fa fa-thumb-tack"></i> Example 5</span>
 							<label>How many times you write "jquery"?:</label>
-							<textarea class="form-control" type="textarea" id="pattern" placeholder="blah blah blah..." maxlength="500" rows="7">WHAT IS JQUERY?
+							<textarea class="form-control" type="textarea" id="pattern" 
+              placeholder="blah blah blah..." maxlength="500" rows="7">WHAT IS JQUERY?
 jQuery is a lightweight, "write less, do more", JavaScript library.
 The purpose of jQuery is to make it much easier to use JavaScript on your website.
 jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code.
-jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.</textarea>       
+jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.
+            </textarea>       
 						</div>
 						
 							
-					<button type="button" id="submit" name="submit" class="btn btn-warning pull-right">Send it outta space</button>
+					<button type="button" id="submit" 
+          name="submit" class="btn btn-warning pull-right">Send it outta space</button>
 					</form>
 			</div>
 	</div>
@@ -162,9 +199,14 @@ jQuery also simplifies a lot of the complicated things from JavaScript, like AJA
     <div class="container">
     <hr>
       <footer style="text-align:center;">
-        <p>Please <span class="text-danger">❤❤❤</span> No matter how small your contribution is, never stop sharing your knowledge with the world!</p>
+        <p>Please <span class="text-danger">❤❤❤</span> 
+        No matter how small your contribution is, 
+        never stop sharing your knowledge with the world!</p>
         <!-- License -->
-        <p>Except where otherwise noted, this work is licensed under a <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+        <p>Except where otherwise noted, this work is licensed under a 
+        <a rel="nofollow" class="external text" href="http://creativecommons.org/licenses/by/4.0/">
+          Creative Commons Attribution 4.0 International License
+        </a>.</p>
       </footer>
     </div> <!-- /container -->
     
@@ -187,9 +229,10 @@ jQuery also simplifies a lot of the complicated things from JavaScript, like AJA
     $(document).ready(function () {
       'use strict';
 			
-			$('.navbar-brand').characterCount(
-			{	message: "_nbCharCounter_ characters /_nbWordCounter_ words ]",
-				messageClass: "limit-header",
+			$('.navbar-brand').attr('maxlength','100').characterCount(
+			{	message: "💡 _nbCharCounter_ characters /_nbWordCounter_ words",
+				wrapTag: "a",
+				messageClass: "limit-header infinite animated flipInX",
 				debug: false
 			});
 			
