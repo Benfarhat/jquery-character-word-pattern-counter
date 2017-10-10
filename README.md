@@ -1,17 +1,28 @@
 # jQuery character word or pattern matching counter
 
+## Demo
+
+[Demo](https://benfarhat.github.io/jquery-character-word-pattern-counter
+/)
+
 ## Usage
 Some examples:
 
 ```
-<script type="text/javascript">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  
+	<script src="src/js/jquery-charactercount.js"></script>
+  <script type="text/javascript">
 
+    
+    
     $(document).ready(function () {
       'use strict';
 			
-			$('.navbar-brand').characterCount(
-			{	message: "_nbCharCounter_ characters /_nbWordCounter_ words ]",
-				messageClass: "limit-header",
+			$('.navbar-brand').attr('maxlength','100').characterCount(
+			{	message: "💡 _nbCharCounter_ characters /_nbWordCounter_ words",
+				wrapTag: "a",
+				messageClass: "limit-header infinite animated flipInX",
 				debug: false
 			});
 			
@@ -44,11 +55,7 @@ Some examples:
 			});	
 			
     });
-  </script>
+  </script>  
 ```
-## Demo
-
-[Demo](https://benfarhat.github.io/jquery-character-word-pattern-counter
-/)
 
 2017 🖥 Benfarhat Elyes
