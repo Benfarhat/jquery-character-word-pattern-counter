@@ -79,6 +79,6 @@
 		wrapTag: "p",
 		customPattern: /\w+/g, 
 		debug: false,
-	}
+	};
 	
 }( jQuery ));
